@@ -23,6 +23,7 @@ function iniciarJuego(){
 }
 
 function actualizarPantalla(){
+    detectarColision();
     limpiarCanvas();
     dibujarGato();
     dibujarComida();
@@ -64,4 +65,14 @@ function dibujarComida(){
 
 function limpiarCanvas(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
+}
+
+function detectarColision(){
+    if(comidaX+ANCHO_COMIDA>gatoX && comidaX<gatoX+ANCHO_GATO && comidaY+ALTO_COMIDA>gatoY && comidaY<gatoY+ALTO_GATO){
+     aparecerComida();     
+}}
+
+function aparecerComida(){
+    comidaX=generarAleatorio(0,canvas.width-ANCHO_COMIDA);
+    comidaY=generarAleatorio(0,canvas.height-ALTO_COMIDA);
 }
