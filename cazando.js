@@ -20,14 +20,17 @@ function iniciarJuego(){
     dibujarComida();
 }
 
+function dibujarRectangulo(x,y,ancho,alto,color){
+    ctx.fillStyle=color;
+    ctx.fillRect(x,y,ancho,alto);
+}
+
 function dibujarGato(){
-    ctx.fillStyle="gray";
-    ctx.fillRect(gatoX,gatoY,ANCHO_GATO,ALTO_GATO);    
+    dibujarRectangulo(gatoX,gatoY,ANCHO_GATO,ALTO_GATO,"gray");
+   
 }
 
 function dibujarComida(){
-    ctx.fillStyle="red";
-    //ctx.fillRect(Math.random()*(canvas.width-20),Math.random()*(canvas.height-20),20,20);    
-    ctx.fillRect(comidaX,comidaY,ANCHO_COMIDA,ALTO_COMIDA);
+    dibujarRectangulo(comidaX,comidaY,ANCHO_COMIDA,ALTO_COMIDA,"red"); 
 }
 
