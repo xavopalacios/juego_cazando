@@ -7,6 +7,7 @@ let comidaY=0;
 
 let puntaje=0;
 let tiempo=10;
+let idIntervaloTiempo;
 
 const ALTO_GATO=60;
 const ANCHO_GATO=50;
@@ -16,7 +17,7 @@ const ANCHO_COMIDA=20;
 
 
 function iniciarJuego(){
-    setInterval(restarTiempo,1000);
+    idIntervaloTiempo =setInterval(restarTiempo,1000);
     gatoX=(canvas.width-ANCHO_GATO)/2;
     gatoY=(canvas.height-ALTO_GATO)/2;
     comidaX=(ANCHO_COMIDA);
@@ -27,6 +28,7 @@ function iniciarJuego(){
 }
 
 function actualizarPantalla(){
+    detectarFinJuego();
     detectarColision();
     limpiarCanvas();
     dibujarGato();
@@ -74,8 +76,9 @@ function limpiarCanvas(){
 function detectarColision(){
     if(comidaX+ANCHO_COMIDA>gatoX && comidaX<gatoX+ANCHO_GATO && comidaY+ALTO_COMIDA>gatoY && comidaY<gatoY+ALTO_GATO){
      aparecerComida(); 
-     puntaje=puntaje+1;    
+     puntaje=puntaje+3;    
      mostrarEnSpan("puntos",puntaje);
+     
 }}
 
 function aparecerComida(){
@@ -86,4 +89,17 @@ function aparecerComida(){
 function restarTiempo(){
     tiempo=tiempo-1;
     mostrarEnSpan("tiempo",tiempo);
+}
+
+function detectarFinJuego(){
+    if(tiempo>=0 && puntaje>=6){
+        clearInterval(idIntervaloTiempo);
+        alert("Ganador");
+        
+
+    } else if(tiempo==0){
+        clearInterval(idIntervaloTiempo);
+        alert("Game Over, tu puntaje es: "+puntaje);
+        
+        }   
 }
