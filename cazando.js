@@ -27,6 +27,17 @@ function iniciarJuego(){
     dibujarComida();
 }
 
+function reiniciarJuego(){
+    limpiarCanvas();
+    clearInterval(idIntervaloTiempo);
+    tiempo=10;
+    puntaje=0;
+    mostrarEnSpan("tiempo",tiempo);
+    mostrarEnSpan("puntos",puntaje);
+    mostrarEnSpan("mensaje","");
+    iniciarJuego();
+}  
+
 function actualizarPantalla(){
     detectarFinJuego();
     detectarColision();
@@ -92,14 +103,21 @@ function restarTiempo(){
 }
 
 function detectarFinJuego(){
+    let varMensaje="";
     if(tiempo>=0 && puntaje>=6){
+        varMensaje="Ganador";
         clearInterval(idIntervaloTiempo);
-        alert("Ganador");
-        
+
+        alert(varMensaje);
+        mostrarEnSpan("mensaje",varMensaje);
 
     } else if(tiempo==0){
+        varMensaje="Perdedor";
+         mostrarEnSpan("mensaje",varMensaje);
         clearInterval(idIntervaloTiempo);
-        alert("Game Over, tu puntaje es: "+puntaje);
+        alert(varMensaje);
         
         }   
 }
+
+ 
