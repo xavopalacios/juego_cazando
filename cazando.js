@@ -5,6 +5,8 @@ let gatoY=0;
 let comidaX=0;
 let comidaY=0;
 
+let puntaje=0;
+
 const ALTO_GATO=60;
 const ANCHO_GATO=50;
 const ALTO_COMIDA=20;
@@ -69,7 +71,9 @@ function limpiarCanvas(){
 
 function detectarColision(){
     if(comidaX+ANCHO_COMIDA>gatoX && comidaX<gatoX+ANCHO_GATO && comidaY+ALTO_COMIDA>gatoY && comidaY<gatoY+ALTO_GATO){
-     aparecerComida();     
+     aparecerComida(); 
+     puntaje=puntaje+1;    
+     mostrarEnSpan("puntos",puntaje);
 }}
 
 function aparecerComida(){
