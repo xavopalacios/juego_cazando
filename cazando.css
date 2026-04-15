@@ -1,42 +1,140 @@
+@import url('https://googleapis.com');
+
 body {
   text-align: center;
-  font-family: Arial, sans-serif;
-  background: #f0f0f0;
+  font-family: 'Oswald', sans-serif;
+  background-color: #0b0b0b;
+  background-image: 
+    radial-gradient(circle, rgba(164, 46, 32, 0.1) 0%, rgba(0, 0, 0, 0.9) 100%),
+    url('https://transparenttextures.com');
+  color: #e1e1e1;
   margin: 0;
   padding: 20px;
 }
 
+/* Título y Autor Estilo Legendario */
 h1 {
-  margin-bottom: 5px;
+  font-family: 'Cinzel', serif;
+  font-size: 4rem;
+  color: #c13128;
+  margin: 0;
+  text-shadow: 0 0 15px rgba(193, 49, 40, 0.7), 3px 3px 0px #000;
+  letter-spacing: 4px;
 }
 
+#autor {
+  font-family: 'Cinzel', serif;
+  color: #ffd700;
+  font-size: 1.2rem;
+  margin-top: -10px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+/* Panel Superior Estilo HUD */
 .panel {
-  margin: 15px 0;
-  font-size: 18px;
   display: flex;
   justify-content: center;
-  gap: 30px;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 20px;
+  background: rgba(30, 30, 30, 0.9);
+  padding: 15px;
+  border: 1px solid #3d4448;
+  border-radius: 5px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
 
-canvas {
-  background: white;
-  border: 2px solid black;
+.stat-card {
+  display: flex;
+  flex-direction: column;
 }
 
-.controles {
-  margin-top: 20px;
+.stat-card .label {
+  font-size: 0.8rem;
+  color: #8a9296;
 }
 
-button {
-  margin: 5px;
-  padding: 10px 16px;
-  font-size: 18px;
-  cursor: pointer;
-}
-
-#mensaje {
-  font-size: 20px;
+#puntos, #tiempo {
+  font-size: 2rem;
   font-weight: bold;
-  color: darkred;
-  margin-top: 15px;
+  color: #fff;
+  text-shadow: 0 0 10px #c13128;
+}
+
+/* Canvas con Marco de Piedra */
+#areaJuego {
+  background: #111;
+  border: 6px solid #2d2d2d;
+  box-shadow: 0 0 30px rgba(0,0,0,0.8);
+  border-radius: 4px;
+}
+
+/* Botones de Movimiento Estilo Habilidades */
+.controles {
+  margin-top: 30px;
+}
+
+.dpad {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-dota {
+  background: linear-gradient(180deg, #4d575c 0%, #2a2e30 100%);
+  border: 2px solid #5a6265;
+  color: #fff;
+  width: 65px;
+  height: 60px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s;
+  box-shadow: 0 4px #1a1a1a;
+}
+
+.btn-dota:hover {
+  border-color: #ff4d42;
+  box-shadow: 0 0 15px rgba(193, 49, 40, 0.4);
+}
+
+.btn-dota:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px #1a1a1a;
+  background: #c13128;
+}
+
+/* Botón Reiniciar con estilo "Ultimate" */
+#btn-reiniciar {
+  background: linear-gradient(180deg, #c13128 0%, #821e18 100%);
+  border: 1px solid #ff4d42;
+  color: white;
+  padding: 10px 25px;
+  font-family: 'Cinzel', serif;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+#btn-reiniciar:hover {
+  filter: brightness(1.3);
+  box-shadow: 0 0 20px rgba(193, 49, 40, 0.6);
+}
+
+/* Mensaje Final */
+#mensaje {
+  font-size: 2rem;
+  color: #ff4d42;
+  text-transform: uppercase;
+  font-family: 'Cinzel', serif;
+  margin: 15px 0;
+  height: 40px;
 }

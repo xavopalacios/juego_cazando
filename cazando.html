@@ -1,36 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <title>Juego Cazando</title>
-  <link rel="stylesheet" href="cazando.css ">
+  <meta charset="UTF-8">
+  <title>Juego Cazando - Dota Edition</title>
+  <link rel="stylesheet" href="cazando.css">
   <script src="utils.js"></script>
-
 </head>
 <body onload="iniciarJuego()">
 
-  <h1>Juego Cazando</h1>
-  <p>Autor: Matemático</p>
+  <div class="main-wrapper">
+    <header>
+      <h1 id="titulo">⚔️ CAZANDO ⚔️</h1>
+      <p id="autor">🛡️ Autor: Matemático</p>
+    </header>
 
-  <canvas id="areaJuego" width="500" height="500"></canvas>
+    <!-- Panel de stats encima del canvas -->
+    <div class="panel">
+      <div class="stat-card">
+        <span class="label">PUNTOS</span>
+        <span id="puntos">0</span>
+      </div>
+      
+      <button id="btn-reiniciar" onclick="reiniciarJuego()">REINICIAR PARTIDA</button>
 
+      <div class="stat-card">
+        <span class="label">TIEMPO</span>
+        <span id="tiempo">10</span>
+      </div>
+    </div>
 
-  <div class="controles">
-    <button onclick="moverArriba()">⬆</button>
-    <br>
-    <button onclick="moverIzquierda()">⬅</button>
-    <button onclick="moverAbajo()">⬇</button>
-    <button onclick="moverDerecha()">➡</button>
-    <br>     <button onclick="reiniciarJuego()">Reiniciar</button>
+    <canvas id="areaJuego" width="500" height="500"></canvas>
+
+    <p id="mensaje"></p>
+
+    <!-- Controles debajo del canvas -->
+    <div class="controles">
+      <div class="dpad">
+        <button class="btn-dota" onclick="moverArriba()">▲</button>
+        <div class="row">
+          <button class="btn-dota" onclick="moverIzquierda()">◀</button>
+          <button class="btn-dota" onclick="moverAbajo()">▼</button>
+          <button class="btn-dota" onclick="moverDerecha()">▶</button>
+        </div>
+      </div>
+    </div>
   </div>
 
-
-  <div class="panel">
-    <span>Puntos: <span id="puntos">0</span></span>
-    <span>Tiempo: <span id="tiempo">10</span></span>
-  </div>
-
-  <p id="mensaje"></p>
-
-<script src="cazando.js"></script>
+  <script src="cazando.js"></script>
 </body>
 </html>
