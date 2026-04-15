@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Juego Cazando - Dota Edition</title>
   <link rel="stylesheet" href="cazando.css">
   <script src="utils.js"></script>
@@ -14,14 +15,13 @@
       <p id="autor">🛡️ Autor: Matemático</p>
     </header>
 
-    <!-- Panel de stats encima del canvas -->
     <div class="panel">
       <div class="stat-card">
         <span class="label">PUNTOS</span>
         <span id="puntos">0</span>
       </div>
       
-      <button id="btn-reiniciar" onclick="reiniciarJuego()">REINICIAR PARTIDA</button>
+      <button id="btn-reiniciar" onclick="reiniciarJuego()">REINICIAR</button>
 
       <div class="stat-card">
         <span class="label">TIEMPO</span>
@@ -33,7 +33,6 @@
 
     <p id="mensaje"></p>
 
-    <!-- Controles debajo del canvas -->
     <div class="controles">
       <div class="dpad">
         <button class="btn-dota" onclick="moverArriba()">▲</button>
@@ -49,3 +48,4 @@
   <script src="cazando.js"></script>
 </body>
 </html>
+
