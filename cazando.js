@@ -1,5 +1,7 @@
 let canvas=document.getElementById("areaJuego");
 let ctx=canvas.getContext("2d");
+const imagenGato = new Image();
+imagenGato.src = "gato.png"
 let gatoX=0;
 let gatoY=0;
 let comidaX=0;
@@ -29,7 +31,9 @@ function iniciarJuego(){
     comidaX=(ANCHO_COMIDA);
     comidaY=(ALTO_COMIDA);
 
-    dibujarGato();
+    imagenGato.onload = function() {
+        actualizarPantalla();
+    };
     dibujarComida();
     
 }
@@ -79,7 +83,8 @@ function dibujarRectangulo(x,y,ancho,alto,color){
 }
 
 function dibujarGato(){
-    dibujarRectangulo(gatoX,gatoY,ANCHO_GATO,ALTO_GATO,"gray");
+    // drawImage(imagen, x, y, ancho, alto)
+    ctx.drawImage(imagenGato, gatoX, gatoY, ANCHO_GATO, ALTO_GATO);
    
 }
 
