@@ -2,6 +2,8 @@ let canvas=document.getElementById("areaJuego");
 let ctx=canvas.getContext("2d");
 const imagenGato = new Image();
 imagenGato.src = "gato.png"
+const imagenRaton = new Image();
+    imagenRaton.src = "raton.png";
 let gatoX=0;
 let gatoY=0;
 let comidaX=0;
@@ -13,8 +15,8 @@ let idIntervaloTiempo;
 
 const ALTO_GATO=60;
 const ANCHO_GATO=50;
-const ALTO_COMIDA=20;
-const ANCHO_COMIDA=20;
+const ALTO_COMIDA=30;
+const ANCHO_COMIDA=25;
 
 const velocidadGato=25;
 let cronometo=1000;
@@ -31,10 +33,9 @@ function iniciarJuego(){
     comidaX=(ANCHO_COMIDA);
     comidaY=(ALTO_COMIDA);
 
-    imagenGato.onload = function() {
-        actualizarPantalla();
-    };
+    dibujarGato();
     dibujarComida();
+
     
 }
 
@@ -89,7 +90,8 @@ function dibujarGato(){
 }
 
 function dibujarComida(){
-    dibujarRectangulo(comidaX,comidaY,ANCHO_COMIDA,ALTO_COMIDA,"red"); 
+    
+    ctx.drawImage(imagenRaton, comidaX, comidaY, ANCHO_COMIDA, ALTO_COMIDA);
 }
 
 
