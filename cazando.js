@@ -6,7 +6,7 @@ let comidaX=0;
 let comidaY=0;
 
 let puntaje=0;
-let tiempo=25;
+let tiempo=15;
 let idIntervaloTiempo;
 
 const ALTO_GATO=60;
@@ -18,7 +18,7 @@ const velocidadGato=25;
 let cronometo=1000;
 const maxPuntaje=6;
 
-let masTiempo=10;
+let masTiempo=15;
 let mastiempoX=canvas.width-ANCHO_COMIDA;
 let mastiempoY=canvas.height-ALTO_COMIDA;
 
@@ -37,7 +37,7 @@ function iniciarJuego(){
 function reiniciarJuego(){
     limpiarCanvas();
     clearInterval(idIntervaloTiempo);
-    tiempo=10;
+    tiempo=15;
     puntaje=0;
     mostrarEnSpan("tiempo",tiempo);
     mostrarEnSpan("puntos",puntaje);
