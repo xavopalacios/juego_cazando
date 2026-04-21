@@ -96,7 +96,7 @@ function limpiarCanvas(){
 function detectarColision(){
     if(comidaX+ANCHO_COMIDA>gatoX && comidaX<gatoX+ANCHO_GATO && comidaY+ALTO_COMIDA>gatoY && comidaY<gatoY+ALTO_GATO){
      aparecerComida(); 
-     tiempo= 15;
+     tiempo= parseInt(document.getElementById("tiempo").textContent)-1;
      puntaje=puntaje+1;    
      mostrarEnSpan("puntos",puntaje);
      
